@@ -31,8 +31,8 @@
 		<thead>
 			<tr style="text-align: center;background-color: #7ED957;color: white;">
 				<th>Indicateur</th>
-				<th>UnitÃ©</th>
-				<th>FrÃ©quence</th>
+				<th>Unité</th>
+				<th>Fréquence</th>
 				<th>Date</th>
 				<th>Valeur</th>
 				<th>Action</th>
@@ -129,6 +129,7 @@
  <script>
  
 $( function() {
+		
 	    $( ".datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
 });
  

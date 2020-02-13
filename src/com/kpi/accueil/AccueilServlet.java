@@ -34,11 +34,13 @@ public class AccueilServlet extends HttpServlet {
 	protected ObjectifDao objectifDao;
 	
 	public void init () throws ServletException {
+		
     	DaoFactory daoFactory = DaoFactory.getInstance();
 		this.saisieDao = daoFactory.getSaisieDao();
 		this.categorieDao = daoFactory.getCategorieDao();
 		this.souscategorieDao = daoFactory.getSousCategorieDao();
 		this.indicateurDao = daoFactory.getIndicateurDao();
+		
     }
        
     /**

@@ -8,12 +8,10 @@
 		<meta charset="UTF-8" />
 		<title>KPI</title>
 		<script src="jquery.js"></script>
-		<script src="jui_alert.min.js"></script>
 		<script src="datatables/DataTables-1.10.20/js/jquery.dataTables.min.js"></script>
 		<script src="css/bootstrap/dist/js/bootstrap.min.js"></script>
     	<link href="css/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     	<link id="ui-theme" href="css/jquery-ui/jquery-ui.css" rel="stylesheet" />
-    	<link href="css/jui_alert.css" rel="stylesheet" />
     	<link href="datatables/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
     	<link href="css/fontawesome/css/font-awesome.css" rel="stylesheet" />
     	
@@ -21,7 +19,6 @@
     	<link rel="icon" href="favicon.ico" />
     	<script src="jquery.chained.js"></script>
     	<script src="jquery-ui.js"></script>
-    	<script src="vue.js"></script>
     	
     	<style>
     		.container1 {
