@@ -89,6 +89,7 @@
     <a class="dropdown-item" href="service" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Services</strong></a>
     <a class="dropdown-item" href="utilisateur" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Utilisateurs</strong></a>
     <a class="dropdown-item" href="profil" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Profil</strong></a>
+    <a class="dropdown-item" href="exportcsv" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Exportation</strong></a>
     <!-- <a class="dropdown-item" href="#">Privilèges</a> -->
   </div>
 </div>

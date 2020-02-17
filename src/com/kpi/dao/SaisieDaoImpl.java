@@ -157,6 +157,65 @@ public class SaisieDaoImpl implements SaisieDao {
 		return saisies;
 	}
 	
+	//Methode renvoyant la
+	public List<Saisie> exportExcel (String date_debut, String date_fin) throws DaoException {
+		List<Saisie> saisies = new ArrayList<Saisie>();
+		Connection connexion = null;
+		Statement statement = null;
+		ResultSet resultat = null;
+		
+		
+		try {
+			connexion = daoFactory.getConnection();
+			statement = connexion.createStatement();
+			resultat = statement.executeQuery("select s.id,\r\n" + 
+					"	   s.id_indicateur,\r\n" + 
+					"	   s.valeur,\r\n" + 
+					"	   s.date_indicateur,\r\n" + 
+					"	   s.date_saisie,\r\n" + 
+					"	   i.libelle libelle_indicateur\r\n" + 
+					"	from saisie s\r\n" + 
+					"	inner join indicateur i\r\n" + 
+					"	on s.id_indicateur = i.id\r\n" +
+					"	where s.date_indicateur between '"+date_debut+"' and '"+date_fin+"' \r\n" +
+					"	order by s.date_indicateur desc;");
+			
+			while (resultat.next()) {
+				int id = resultat.getInt("id");
+				Double valeur = resultat.getDouble("valeur");
+				String date_indicateur = resultat.getString("date_indicateur");
+				String date_saisie = resultat.getString("date_saisie");
+				int id_indicateur = resultat.getInt("id_indicateur");
+				String libelle_indicateur = resultat.getString("libelle_indicateur");
+				
+				Saisie saisie = new Saisie();
+				
+				saisie.setId(id);
+				saisie.setValeur(valeur); 
+				saisie.setDate_indicateur(date_indicateur);
+				saisie.setDate_saisie(date_saisie);
+				saisie.setId_indicateur(id_indicateur);
+				saisie.setLibelle_indicateur(libelle_indicateur);
+				
+				saisies.add(saisie);
+			}
+		} catch (SQLException e) {
+			throw new DaoException("Impossible de communiquer avec la base de données.");
+		} catch (BeanException e) {
+			throw new DaoException("Les données de base sont invalides");
+		} finally {
+			try {
+				if (connexion != null ) {
+					connexion.close();
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Impossible de communiquer avec la base de données.");
+			}
+		}
+		
+		return saisies;
+	}
+	
 	public List<Saisie> listerSaisie () throws DaoException {
 		List<Saisie> saisies = new ArrayList<Saisie>();
 		Connection connexion = null;

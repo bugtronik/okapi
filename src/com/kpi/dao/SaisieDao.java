@@ -19,6 +19,7 @@ public interface SaisieDao {
 	
 	public void importCSV(String filename) throws DaoException;
 	List<Saisie> listConsultation (String username) throws DaoException;
+	List<Saisie> exportExcel (String date_debut, String date_fin) throws DaoException;
 	
 	/**
 	 * Permet de verifier si l'indicateur à déjà été saisie 

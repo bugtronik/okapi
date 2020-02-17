@@ -3,7 +3,7 @@
 <strong style="font-size: 25px;">Mes indicateurs</strong>
 <br><br>
 <div class="alert alert-success" role="alert" style="display: none;text-align: center;" id="message_success">
-	<strong>OpÃ©ration terminÃ©e</strong>
+	<strong>Opération terminée</strong>
 </div>
 <c:if test="${ !empty erreur }">
 	<div class="alert alert-danger offset-lg-4 message_error" style="text-align: center;">

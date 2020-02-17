@@ -48,9 +48,19 @@
 		<url-pattern>/exportcsv</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Download</servlet-name>
+		<servlet-class>com.kpi.download.Download</servlet-class>
+		<init-param>
+			<param-name>chemin</param-name>
+			<param-value>/fichiers/</param-value>
+		</init-param>
+	</servlet>
 	
-	
-	<!-- ******** Fin gestion des utilisateurs *********** -->
+	<servlet-mapping>
+		<servlet-name>Download</servlet-name>
+		<url-pattern>/fichiers/*</url-pattern>
+	</servlet-mapping>
 	
 	<!-- ********** Gestion des categories d'indicateurs ************** -->
     
@@ -215,21 +225,6 @@
 	<servlet-mapping>
 		<servlet-name>DeconnexionServlet</servlet-name>
 		<url-pattern>/deconnexion</url-pattern>
-	</servlet-mapping>
-	
-	
-	<servlet>
-		<servlet-name>Download</servlet-name>
-		<servlet-class>com.kpi.template.Download</servlet-class>
-		<init-param>
-        	<param-name>chemin</param-name> 
-        	<param-value>/fichiers/</param-value>
-    	</init-param>
-	</servlet>
-	
-	<servlet-mapping>
-		<servlet-name>Download</servlet-name>
-		<url-pattern>/fichiers/*</url-pattern>
 	</servlet-mapping>
 	
 	<!-- Uploads des fichiers -->
