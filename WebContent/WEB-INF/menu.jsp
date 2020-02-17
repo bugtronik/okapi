@@ -59,6 +59,9 @@
   	<a class="dropdown-item" href="saisie" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Saisie</strong></a>
   	</c:if>
   	<a class="dropdown-item" href="consultation" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Consultation</strong></a>
+  	<c:if test="${ sessionScope.profil == 'Contrôle de gestion' || sessionScope.profil == 'Administrateur' }">
+  	<a class="dropdown-item" href="exportcsv" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Exportation</strong></a>
+  	</c:if>
   </div>
   </div>
   <div class="dropdown">
@@ -66,7 +69,7 @@
    <strong>Objectifs</strong>
   </a>
   <div class="dropdown-menu" aria-labelledby="objectif" style="background-color: #38B6FF;">
-  	<c:if test="${ sessionScope.profil == 'Administrateur' || sessionScope.profil == 'Collaborateur'}">
+  	<c:if test="${ sessionScope.profil == 'Administrateur' || sessionScope.profil == 'Contrôle de gestion'}">
     <a class="dropdown-item" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'" href="http://10.120.21.145:8124/okapi-import/index.php"><strong>Import</strong></a>
     </c:if>
     <a class="dropdown-item" style="color: white;" href="consultation-objectif" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Consultation</strong></a>
@@ -89,7 +92,6 @@
     <a class="dropdown-item" href="service" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Services</strong></a>
     <a class="dropdown-item" href="utilisateur" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Utilisateurs</strong></a>
     <a class="dropdown-item" href="profil" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Profil</strong></a>
-    <a class="dropdown-item" href="exportcsv" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Exportation</strong></a>
     <!-- <a class="dropdown-item" href="#">Privilèges</a> -->
   </div>
 </div>
