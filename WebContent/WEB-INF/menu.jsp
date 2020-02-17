@@ -70,7 +70,7 @@
   </a>
   <div class="dropdown-menu" aria-labelledby="objectif" style="background-color: #38B6FF;">
   	<c:if test="${ sessionScope.profil == 'Administrateur' || sessionScope.profil == 'Contrôle de gestion'}">
-    <a class="dropdown-item" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'" href="http://10.120.21.145:8124/okapi-import/index.php"><strong>Import</strong></a>
+    <a class="dropdown-item" style="color: white;" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'" href="import"><strong>Import</strong></a>
     </c:if>
     <a class="dropdown-item" style="color: white;" href="consultation-objectif" onmouseover="this.style.color='#38B6FF';" onmouseout="this.style.color='#FFFFFF'"><strong>Consultation</strong></a>
     <!-- <a class="dropdown-item" href="#">Privilèges</a> -->

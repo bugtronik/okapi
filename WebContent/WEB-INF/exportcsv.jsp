@@ -22,7 +22,7 @@
 </form><br /><br />
 
 <c:if test="${ !empty exportation }">
-	<a href="http://10.120.21.145:8080/kpi/fichiers/exports.xls">Télécharger le fichier</a>
+	<a href="http://localhost:8080/kpi/fichiers/exports.xls">Télécharger le fichier</a>
 </c:if>
 
 <script>

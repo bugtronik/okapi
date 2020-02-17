@@ -134,8 +134,8 @@ public class ExportCSVServlet extends HttpServlet {
 				}
 				
 				//On récupère le nom de la session du desktop de l'utilisateur
-				//String nomSession = System.getProperty("user.home");
-				//System.out.println(nomSession);
+				String nomSession = System.getProperty("user.home");
+				System.out.println(nomSession);
 				
 				File file = new File("/fichiers/exports.xls");
 				file.getParentFile().mkdirs();
