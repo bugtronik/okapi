@@ -18,8 +18,19 @@ public class Saisie {
 	protected String libelle_categorie;
 	protected int id_sous_categorie;
 	protected String libelle_sous_categorie;
+	protected String libelle_service;
 	
 	
+	public String getLibelle_service() {
+		return libelle_service;
+	}
+	public void setLibelle_service(String libelle_service) throws BeanException {
+		if(libelle_service.length() > 150) {
+			throw new BeanException("Le libelle du service est trop long. (150 minimum)");
+		} else {
+			this.libelle_service = libelle_service;
+		}
+	}
 	public int getId_categorie() {
 		return id_categorie;
 	}

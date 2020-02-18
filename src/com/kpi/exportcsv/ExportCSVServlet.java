@@ -63,8 +63,6 @@ public class ExportCSVServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String username = (String)session.getAttribute("username");
 		
-		//System.out.println("Aly & Petra - S'aiment");
-		
 		try {
 			if (username == null) {
 				response.sendRedirect( request.getContextPath() + "/connexion" );
@@ -111,8 +109,13 @@ public class ExportCSVServlet extends HttpServlet {
 				cell.setCellValue("date_indicateur");
 				cell.setCellStyle(style);
 				
+				//Direction de l'indicateur
+				cell = row.createCell(2, CellType.STRING);
+				cell.setCellValue("Service");
+				cell.setCellStyle(style);
+				
 				//Valeur de l'indicateur
-				cell = row.createCell(2, CellType.NUMERIC);
+				cell = row.createCell(3, CellType.NUMERIC);
 				cell.setCellValue("valeur");
 				cell.setCellStyle(style);
 				
@@ -128,8 +131,12 @@ public class ExportCSVServlet extends HttpServlet {
 					cell = row.createCell(1, CellType.STRING);
 					cell.setCellValue(saisie.getDate_indicateur());
 					
+					//La direction de l'indicateur
+					cell = row.createCell(2, CellType.STRING);
+					cell.setCellValue(saisie.getLibelle_service());
+					
 					//La valeur de l'indicateur
-					cell = row.createCell(2, CellType.NUMERIC);
+					cell = row.createCell(3, CellType.NUMERIC);
 					cell.setCellValue(saisie.getValeur());
 				}
 				

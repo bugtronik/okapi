@@ -173,10 +173,13 @@ public class SaisieDaoImpl implements SaisieDao {
 					"	   s.valeur,\r\n" + 
 					"	   s.date_indicateur,\r\n" + 
 					"	   s.date_saisie,\r\n" + 
-					"	   i.libelle libelle_indicateur\r\n" + 
+					"	   i.libelle libelle_indicateur,\r\n" + 
+					"	   se.libelle libelle_service\r\n" + 
 					"	from saisie s\r\n" + 
 					"	inner join indicateur i\r\n" + 
 					"	on s.id_indicateur = i.id\r\n" +
+					"	inner join service se\r\n" +
+					"	on i.id_service = se.id\r\n" +
 					"	where s.date_indicateur between '"+date_debut+"' and '"+date_fin+"' \r\n" +
 					"	order by s.date_indicateur desc;");
 			
@@ -187,6 +190,7 @@ public class SaisieDaoImpl implements SaisieDao {
 				String date_saisie = resultat.getString("date_saisie");
 				int id_indicateur = resultat.getInt("id_indicateur");
 				String libelle_indicateur = resultat.getString("libelle_indicateur");
+				String libelle_service = resultat.getString("libelle_service");
 				
 				Saisie saisie = new Saisie();
 				
@@ -196,6 +200,7 @@ public class SaisieDaoImpl implements SaisieDao {
 				saisie.setDate_saisie(date_saisie);
 				saisie.setId_indicateur(id_indicateur);
 				saisie.setLibelle_indicateur(libelle_indicateur);
+				saisie.setLibelle_service(libelle_service);
 				
 				saisies.add(saisie);
 			}

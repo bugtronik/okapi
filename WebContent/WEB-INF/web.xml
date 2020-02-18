@@ -49,6 +49,21 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>ImportObjectifServlet</servlet-name>
+		<servlet-class>com.kpi.importexcel.ImportObjectifServlet</servlet-class>
+		<multipart-config>
+			<location>/fichiers/</location>
+			<max-file-size>10485760</max-file-size>
+			<max-request-size>52428800</max-request-size>
+			<file-size-threshold>1048576</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ImportObjectifServlet</servlet-name>
+		<url-pattern>/import</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>Download</servlet-name>
 		<servlet-class>com.kpi.download.Download</servlet-class>
 		<init-param>
