@@ -14,11 +14,13 @@
     	<link id="ui-theme" href="css/jquery-ui/jquery-ui.css" rel="stylesheet" />
     	<link href="datatables/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
     	<link href="css/fontawesome/css/font-awesome.css" rel="stylesheet" />
+    	<link href="css/jquery.timepicker.min.css" rel="stylesheet" />
     	
     	<link href="css/police.css" rel="stylesheet" />
     	<link rel="icon" href="favicon.ico" />
     	<script src="jquery.chained.js"></script>
     	<script src="jquery-ui.js"></script>
+    	<script src="jquery.timepicker.min.js"></script>
     	
     	<style>
     		.container1 {

@@ -75,7 +75,6 @@ public class AccueilServlet extends HttpServlet {
 				DateFormat df2 = new SimpleDateFormat("yyyy-MM-dd");
 				String date_actuelle = df2.format(date.getTime());
 				
-				System.out.println(date_actuelle);
 				
 				
 				//Liste des indicateurs
@@ -87,8 +86,7 @@ public class AccueilServlet extends HttpServlet {
 				request.setAttribute("indicateurs", indicateurDao.listerDashboard());
 				request.setAttribute("objectifs", indicateurDao.listeObjectifs());
 				request.setAttribute("date_precedente", this.getYesterdayDateString());
-				
-				System.out.println(this.getYesterdayDateString());
+		
 				this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 			}
 		} catch (Exception e) {

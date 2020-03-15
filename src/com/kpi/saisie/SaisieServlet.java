@@ -51,6 +51,18 @@ public class SaisieServlet extends HttpServlet {
 		String username = (String)session.getAttribute("username");
 		String profil = (String)session.getAttribute("profil");
 		
+		String times = "23:25:59";
+		
+		Double heure = Double.parseDouble(times.substring(0, 2));
+		Double minute = Double.parseDouble(times.substring(3, 5));
+		Double secondes = Double.parseDouble(times.substring(6, 8));
+		System.out.println(heure);
+		System.out.println(minute);
+		System.out.println(secondes);
+		
+		Double time_complete = heure + (minute/60) + (secondes / 3600);
+		
+		System.out.println(time_complete);
 		
 		
 		try {
@@ -125,6 +137,11 @@ public class SaisieServlet extends HttpServlet {
 					this.getServletContext().getRequestDispatcher("/WEB-INF/saisie.jsp").forward(request, response);
 				}
 				else {
+					
+					//On verifie si l'unité de l'indicateur est de type heure
+					String heure = request.getParameter("unite");
+					
+					
 					saisie.setValeur(Double.parseDouble(request.getParameter("valeur")));
 					saisie.setVersion(request.getParameter("version"));
 					saisie.setDate_indicateur(request.getParameter("date_indicateur"));
@@ -133,7 +150,7 @@ public class SaisieServlet extends HttpServlet {
 					saisie.setId_utilisateur(Integer.parseInt(request.getParameter("id_utilisateur")));
 					
 					//Ajout dans la base de données
-					saisieDao.ajouter(saisie);
+					//saisieDao.ajouter(saisie);
 					request.setAttribute("message_ajout", "Opération réussi");
 					
 					request.setAttribute("date_actuelle", date_saisie);

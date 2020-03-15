@@ -27,27 +27,8 @@
 						<td>
 							<c:out value="${ saisie.libelle_indicateur }" />
 						</td>
-						<c:choose>
-							<c:when test="${ saisie.date_indicateur != date_actuelle }">
-								<form method="post" action="saisie" class="form-inline">
-								<td>
-									<c:out value="${ saisie.valeur }" />
-								</td>
-								<td>
-									<c:out value="${ saisie.date_indicateur }" />
-								</td>
-								<input type="hidden" name="date_indicateur" value="${ saisie.date_indicateur }" />
-								<input type="hidden" name="id" value="${ saisie.id }" />
-								<input type="hidden" name="id_indicateur" value="${ saisie.id_indicateur }" />
-								<input type="hidden" name="tag_update" value="on" />
-								<td>
-								<input type="submit" disabled="disabled" title="La période de modification est dépassée" value="Modifier" class="btn btn-danger" />
-								</td>
-								</form>
-							</c:when>
-							<c:when test="${ saisie.date_indicateur == date_actuelle }">
-							<form method="post" action="saisie" class="form-inline">
-								<td>
+						<form method="post" action="saisie" class="form-inline">
+							<td>
 								<c:choose>
 								<c:when test="${ sessionScope.profil == 'Administrateur' || sessionScope.profil == 'Collaborateur' }">
 									<input type="text" name="valeur" value="${ saisie.valeur }" class="form-control col-lg-4" />
@@ -72,11 +53,9 @@
 									<c:when test="${ sessionScope.profil == 'Lecteur' }">
 										<input type="submit" value="Modifier" title="Vous n'avez pas les droits de modification" disabled class="btn btn-warning" />
 									</c:when>
-									</c:choose>
-								</td>
-								</form>
-							</c:when>
-							</c:choose>
+								</c:choose>
+							</td>
+						</form>
 					</tr>
 				</c:forEach>
 			</c:if>

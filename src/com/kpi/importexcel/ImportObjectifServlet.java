@@ -33,6 +33,7 @@ public class ImportObjectifServlet extends HttpServlet {
     public void init () throws ServletException {
     	DaoFactory daoFactory = DaoFactory.getInstance();
 		this.serviceDao = daoFactory.getServiceDao();
+		this.indicateurDao = daoFactory.getIndicateurDao();
     }
 
 	/**
@@ -52,6 +53,10 @@ public class ImportObjectifServlet extends HttpServlet {
 				
 				//On récupère la liste des services
 				request.setAttribute("services", serviceDao.lister());
+				
+				//On récupère la liste des indicateurs
+				request.setAttribute("indicateurs", indicateurDao.lister());
+				
 				this.getServletContext().getRequestDispatcher("/WEB-INF/importObjectif.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
@@ -64,7 +69,18 @@ public class ImportObjectifServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		try {
+			
+			//On récupère les valeurs renseigner au sein du formulaire
+			String username = request.getParameter("username");
+			int id_indicateur = Integer.parseInt(request.getParameter("id_indicateur"));
+			
+		} catch (Exception e) {
+			
+		}
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/importObjectif.jsp").forward(request, response);
 	}
 
 }

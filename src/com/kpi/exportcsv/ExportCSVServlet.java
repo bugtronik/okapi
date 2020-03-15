@@ -150,7 +150,6 @@ public class ExportCSVServlet extends HttpServlet {
 				FileOutputStream outFile = new FileOutputStream(file);
 				workbook.write(outFile);
 				System.out.println("Created file: " + file.getAbsolutePath());
-				System.out.println("Aly & Petra - Unis pour la vie");
 				
 				request.setAttribute("exportation", file.getAbsolutePath());
 

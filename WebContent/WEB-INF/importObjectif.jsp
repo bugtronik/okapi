@@ -1,7 +1,9 @@
 <%@ include file="menu.jsp" %>
+<br>
+<strong style="font-size: 25px;">Import des objectifs</strong>
 <br><br>
 
-<form method="post" action="exportcsv">
+<form method="post" action="import">
 	<div class="row">
 		<div class="col-md-4">
 			<label><strong>Contrôleur : </strong></label>
@@ -9,7 +11,7 @@
 		</div>
 		<div class="col-md-4">
 			<label><strong>Service : </strong></label>
-			<select name="id_service" class="form-control">
+			<select name="id_service" class="form-control" id="services">
 				<option value=""></option>
 				<c:if test="${ !empty services }">
 					<c:forEach items="${ services }" var="service">
@@ -20,8 +22,13 @@
 		</div>
 		<div class="col-md-4">
 			<label><strong>Indicateur : </strong></label>
-			<select name="id_indicateur" class="form-control">
+			<select name="id_indicateur" class="form-control" id="indicateurs">
 				<option value=""></option>
+				<c:if test="${ !empty indicateurs }">
+					<c:forEach items="${ indicateurs }" var="indicateur">
+						<option value="${ indicateur.id }" class="${ indicateur.id_service }"><c:out value="${ indicateur.libelle }" /></option>
+					</c:forEach>
+				</c:if>
 			</select>
 		</div>
 	</div><br>
@@ -31,3 +38,9 @@
 		</div>
 	</div>
 </form><br /><br />
+
+<script>
+	$( function () {
+		$("#indicateurs").chained("#services");
+	});
+</script>
