@@ -71,8 +71,10 @@ public class SaisieServlet extends HttpServlet {
 				response.sendRedirect( request.getContextPath() + "/connexion" );
 			}
 			else {
-				System.out.println(profil);
-				System.out.println(username);
+				//System.out.println(profil);
+				//System.out.println(username);
+				
+				
 				//Date de la saisie
 				DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 				Calendar date = Calendar.getInstance();
@@ -150,7 +152,7 @@ public class SaisieServlet extends HttpServlet {
 					saisie.setId_utilisateur(Integer.parseInt(request.getParameter("id_utilisateur")));
 					
 					//Ajout dans la base de données
-					//saisieDao.ajouter(saisie);
+					saisieDao.ajouter(saisie);
 					request.setAttribute("message_ajout", "Opération réussi");
 					
 					request.setAttribute("date_actuelle", date_saisie);

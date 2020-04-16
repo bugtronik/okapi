@@ -106,13 +106,7 @@
 										<input type=text name="date_indicateur" class="form-control datepicker saisies" placeholder="Date" autocomplete="off" required />&nbsp;
 									</td>
 									<td>
-										<c:if test="${ indicateur.libelle_unite == 'Heure' }">
-											<input type="hidden" name="unite" value="Heure" />
-											<input type="time" step="1" name="valeur" class="form-control" placeholder="Valeur" autocomplete="off" />&nbsp;
-										</c:if>
-										<c:if test="${ indicateur.libelle_unite != 'Heure' }">
-											<input type="text" step="any" name="valeur" class="form-control saisie" placeholder="Valeur" autocomplete="off" />&nbsp;
-										</c:if>
+										<input type="text" step="any" name="valeur" class="form-control saisie" placeholder="Valeur" autocomplete="off" />&nbsp;
 									</td>
 									<input type="hidden" name="id_indicateur" value="${ indicateur.id }" />
 									<input type="hidden" value="reelle" name="version" />
